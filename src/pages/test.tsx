@@ -14,7 +14,7 @@ function RedundantStateComponent() {
       <p>Count: {count}</p>
       <p>Double Count: {doubleCount}</p>
       <button onClick={increment}>Increment</button>
-      <button onClick={increment}>Deccrement</button>
+
       
     </div>
   );
