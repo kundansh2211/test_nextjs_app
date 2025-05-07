@@ -62,3 +62,4 @@ const [user, setUser] = useState({
 // ✅ Good
 const [address, setAddress] = useState({ street: "MG Road" });
 - Add docstrings to functions
+- Avoid using redundant states.
