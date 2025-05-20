@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - main # target branch of the PR.
+      - main
 
 jobs:
   run-code-review:
@@ -14,7 +14,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Debug FASTAPI_URL
+      - name: Debug FastAPI URL
+        if: always()
         run: echo "FastAPI URL is ${{ secrets.REVIEW_API_URL }}"
 
       - name: Call FastAPI Review Agent
@@ -27,4 +28,10 @@ jobs:
 
           curl -v -X POST "$FASTAPI_URL/review/" \
             -H "Content-Type: application/json" \
-            -d "{\"repo_url\": \"https://github.com/${{ github.repository }}\", \"pr_number\": ${{ github.event.pull_request.number }}, \"branch\": \"${{ github.head_ref }}\", \"changed_files\": []}"
+            -d '{
+              "repo_url": "https://github.com/${{ github.repository }}",
+              "pr_number": ${{ github.event.pull_request.number }},
+              "base_branch": "${{ github.base_ref }}",
+              "head_branch": "${{ github.head_ref }}",
+              "changed_files": []
+            }'
