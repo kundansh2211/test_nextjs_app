@@ -66,3 +66,4 @@ const [address, setAddress] = useState({ street: "MG Road" });
 - Make the code more modular by breaking it into reusable components.
 - Do not use redundant states.
 - Avoid redundant states.
+- Doing good.
