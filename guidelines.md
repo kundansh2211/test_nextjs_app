@@ -64,3 +64,4 @@ const [address, setAddress] = useState({ street: "MG Road" });
 - Add docstrings to functions
 - Avoid using redundant states.
 - Make the code more modular by breaking it into reusable components.
+- Do not use redundant states.
