@@ -156,4 +156,3 @@ Best Practices Summary
 ✅ Memoize objects and arrays when passing them to child components to prevent re-renders.
 ✅ Always provide correct dependency arrays to avoid stale values.
 ✅ Do not use useMemo prematurely—measure performance first.
-- Good
