@@ -157,3 +157,4 @@ Best Practices Summary
 ✅ Always provide correct dependency arrays to avoid stale values.
 ✅ Do not use useMemo prematurely—measure performance first.
 - Stick to MUI icons as far as possible.
+- Avoid creating state variables for derived data. Instead of using 'doubleCount', calculate it directly from 'count'.
